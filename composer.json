@@ -1,0 +1,26 @@
+{
+    "name": "davidiq/Shmoogle",
+    "type": "phpbb-extension",
+    "description": "Shows a fully interactive Google Map where your users can input their location and be displayed on a map with a selection of customizable map markers. Includes ACP and UCP modules for admin and users.",
+    "homepage": "https://github.com/DavidIQ/phpBB-Shmoogle",
+    "version": "1.0.0-dev",
+    "time": "2016-12-02",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "David Col??n",
+            "email": "davidiq@phpbb.com",
+            "homepage": "http://www.davidiq.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "extra": {
+        "display-name": "Shmoogle Member Map",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.1.10,<3.2.0@dev"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+imports:
+    - { resource: parameters.yml }
+
+services:
+    davidiq.Shmoogle.controller:
+        class: davidiq\Shmoogle\controller\main
+        arguments:
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@user'
+
+    davidiq.Shmoogle.service:
+        class: davidiq\Shmoogle\service
+        arguments:
+            - '@user'
+            - '%davidiq.Shmoogle.tables.demo_table%'
+
+    davidiq.Shmoogle.listener:
+        class: davidiq\Shmoogle\event\main_listener
+        arguments:
+            - '@controller.helper'
+            - '@template'
+            - '@user'
+            - '%core.php_ext%'
+        tags:
+            - { name: event.listener }

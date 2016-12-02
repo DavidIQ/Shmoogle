@@ -1,0 +1,3 @@
+davidiq_Shmoogle_controller:
+    path: /demo/{name}
+    defaults: { _controller: davidiq.Shmoogle.controller:handle }
