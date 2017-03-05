@@ -14,27 +14,33 @@ class install_acp_module extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return isset($this->config['acme_demo_goodbye']);
+		$sql = 'SELECT module_id
+			FROM ' . $this->table_prefix . "modules
+			WHERE module_class = 'acp'
+				AND module_langname = 'ACP_SHMOOGLE_TITLE'";
+		$result = $this->db->sql_query($sql);
+		$module_id = $this->db->sql_fetchfield('module_id');
+		$this->db->sql_freeresult($result);
+
+		return $module_id !== false;
 	}
 
 	static public function depends_on()
 	{
-		return array('\phpbb\db\migration\data\v31x\v314');
+		return array('\davidiq\Shmoogle\migrations\initial_data');
 	}
 
 	public function update_data()
 	{
 		return array(
-			array('config.add', array('acme_demo_goodbye', 0)),
-
 			array('module.add', array(
 				'acp',
 				'ACP_CAT_DOT_MODS',
-				'ACP_DEMO_TITLE'
+				'ACP_SHMOOGLE_TITLE'
 			)),
 			array('module.add', array(
 				'acp',
-				'ACP_DEMO_TITLE',
+				'ACP_SHMOOGLE_TITLE',
 				array(
 					'module_basename'	=> '\davidiq\Shmoogle\acp\main_module',
 					'modes'				=> array('settings'),

@@ -19,5 +19,6 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'ACP_DEMO_TITLE'			=> 'Demo Module',
+	'UCP_SHMOOGLE_SETTINGS'	=> 'Settings',
+	'UCP_SHMOOGLE_TITLE'	=> 'Shmoogle Member Map',
 ));

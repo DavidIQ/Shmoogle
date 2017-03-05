@@ -19,12 +19,12 @@ class main_info
 	{
 		return array(
 			'filename'	=> '\davidiq\Shmoogle\acp\main_module',
-			'title'		=> 'ACP_DEMO_TITLE',
+			'title'		=> 'ACP_SHMOOGLE_TITLE',
 			'modes'		=> array(
 				'settings'	=> array(
-					'title'	=> 'ACP_DEMO',
+					'title'	=> 'ACP_SHMOOGLE_CONFIG',
 					'auth'	=> 'ext_davidiq/Shmoogle && acl_a_board',
-					'cat'	=> array('ACP_DEMO_TITLE')
+					'cat'	=> array('ACP_SHMOOGLE_TITLE')
 				),
 			),
 		);

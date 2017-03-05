@@ -17,7 +17,7 @@ class install_ucp_module extends \phpbb\db\migration\migration
 		$sql = 'SELECT module_id
 			FROM ' . $this->table_prefix . "modules
 			WHERE module_class = 'ucp'
-				AND module_langname = 'UCP_DEMO_TITLE'";
+				AND module_langname = 'UCP_SHMOOGLE_TITLE'";
 		$result = $this->db->sql_query($sql);
 		$module_id = $this->db->sql_fetchfield('module_id');
 		$this->db->sql_freeresult($result);
@@ -27,7 +27,7 @@ class install_ucp_module extends \phpbb\db\migration\migration
 
 	static public function depends_on()
 	{
-		return array('\davidiq\Shmoogle\migrations\install_user_schema');
+		return array('\davidiq\Shmoogle\migrations\initial_data');
 	}
 
 	public function update_data()
@@ -36,11 +36,11 @@ class install_ucp_module extends \phpbb\db\migration\migration
 			array('module.add', array(
 				'ucp',
 				0,
-				'UCP_DEMO_TITLE'
+				'UCP_SHMOOGLE_TITLE'
 			)),
 			array('module.add', array(
 				'ucp',
-				'UCP_DEMO_TITLE',
+				'UCP_SHMOOGLE_TITLE',
 				array(
 					'module_basename'	=> '\davidiq\Shmoogle\ucp\main_module',
 					'modes'				=> array('settings'),

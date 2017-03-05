@@ -12,6 +12,11 @@ namespace davidiq\Shmoogle\migrations;
 
 class initial_data extends \phpbb\db\migration\migration
 {
+	public function effectively_installed()
+	{
+		return $this->db->get_row_count($this->table_prefix . 'shmoogle_config');
+	}
+
 	static public function depends_on()
 	{
 		return array('\davidiq\Shmoogle\migrations\initial_schema');

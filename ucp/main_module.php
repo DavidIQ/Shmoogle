@@ -21,9 +21,9 @@ class main_module
 	{
 		global $db, $request, $template, $user;
 
-		$this->tpl_name = 'ucp_demo_body';
-		$this->page_title = $user->lang('UCP_DEMO_TITLE');
-		add_form_key('acme/demo');
+		$this->tpl_name = 'ucp_shmoogle_body';
+		$this->page_title = $user->lang['UCP_SHMOOGLE_TITLE'];
+		add_form_key('davidiq/Shmoogle');
 
 		$data = array(
 			'user_acme' => $request->variable('user_acme', $user->data['user_acme']),
@@ -31,9 +31,9 @@ class main_module
 
 		if ($request->is_set_post('submit'))
 		{
-			if (!check_form_key('acme/demo'))
+			if (!check_form_key('davidiq/Shmoogle'))
 			{
-				trigger_error($user->lang('FORM_INVALID'));
+				trigger_error($user->lang['FORM_INVALID']);
 			}
 
 			$sql = 'UPDATE ' . USERS_TABLE . '
@@ -42,12 +42,11 @@ class main_module
 			$db->sql_query($sql);
 
 			meta_refresh(3, $this->u_action);
-			$message = $user->lang('UCP_DEMO_SAVED') . '<br /><br />' . $user->lang('RETURN_UCP', '<a href="' . $this->u_action . '">', '</a>');
+			$message = $user->lang['UCP_SHMOOGLE_SAVED'] . '<br /><br />' . $user->lang('RETURN_UCP', '<a href="' . $this->u_action . '">', '</a>');
 			trigger_error($message);
 		}
 
 		$template->assign_vars(array(
-			'S_USER_ACME'	=> $data['user_acme'],
 			'S_UCP_ACTION'	=> $this->u_action,
 		));
 	}
