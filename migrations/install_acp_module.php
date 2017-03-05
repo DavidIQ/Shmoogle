@@ -17,7 +17,7 @@ class install_acp_module extends \phpbb\db\migration\migration
 		$sql = 'SELECT module_id
 			FROM ' . $this->table_prefix . "modules
 			WHERE module_class = 'acp'
-				AND module_langname = 'ACP_SHMOOGLE_TITLE'";
+				AND module_langname = 'ACP_CAT_SHMOOGLE'";
 		$result = $this->db->sql_query($sql);
 		$module_id = $this->db->sql_fetchfield('module_id');
 		$this->db->sql_freeresult($result);
@@ -36,14 +36,14 @@ class install_acp_module extends \phpbb\db\migration\migration
 			array('module.add', array(
 				'acp',
 				'ACP_CAT_DOT_MODS',
-				'ACP_SHMOOGLE_TITLE'
+				'ACP_CAT_SHMOOGLE'
 			)),
 			array('module.add', array(
 				'acp',
-				'ACP_SHMOOGLE_TITLE',
+				'ACP_CAT_SHMOOGLE',
 				array(
 					'module_basename'	=> '\davidiq\Shmoogle\acp\main_module',
-					'modes'				=> array('settings'),
+					'modes'				=> array('config', 'events', 'markers', 'event_markers', 'users'),
 				),
 			)),
 		);

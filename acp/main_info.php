@@ -19,12 +19,32 @@ class main_info
 	{
 		return array(
 			'filename'	=> '\davidiq\Shmoogle\acp\main_module',
-			'title'		=> 'ACP_SHMOOGLE_TITLE',
+			'title'		=> 'ACP_CAT_SHMOOGLE',
 			'modes'		=> array(
-				'settings'	=> array(
-					'title'	=> 'ACP_SHMOOGLE_CONFIG',
-					'auth'	=> 'ext_davidiq/Shmoogle && acl_a_board',
-					'cat'	=> array('ACP_SHMOOGLE_TITLE')
+				'config'		=> array(
+					'title' => 'ACP_SHMOOGLE_CONFIG',
+					'auth' => 'acl_a_modules',
+					'cat' => array('ACP_CAT_SHMOOGLE')
+				),
+				'events'		=> array(
+					'title' => 'ACP_SHMOOGLE_EVENTS',
+					'auth' => 'acl_a_modules',
+					'cat' => array('ACP_CAT_SHMOOGLE')
+				),
+				'markers'		=> array(
+					'title' => 'ACP_SHMOOGLE_MARKERS',
+					'auth' => 'acl_a_modules',
+					'cat' => array('ACP_CAT_SHMOOGLE')
+				),
+				'event_markers'	=> array(
+					'title' => 'ACP_SHMOOGLE_EVENT_MARKERS',
+					'auth' => 'acl_a_modules',
+					'cat' => array('ACP_CAT_SHMOOGLE')
+				),
+				'users'			=> array(
+					'title' => 'ACP_SHMOOGLE_USERS',
+					'auth' => 'acl_a_modules',
+					'cat' => array('ACP_CAT_SHMOOGLE')
 				),
 			),
 		);

@@ -36,14 +36,14 @@ class install_ucp_module extends \phpbb\db\migration\migration
 			array('module.add', array(
 				'ucp',
 				0,
-				'UCP_SHMOOGLE_TITLE'
+				'ACP_CAT_SHMOOGLE'
 			)),
 			array('module.add', array(
 				'ucp',
-				'UCP_SHMOOGLE_TITLE',
+				'ACP_CAT_SHMOOGLE',
 				array(
 					'module_basename'	=> '\davidiq\Shmoogle\ucp\main_module',
-					'modes'				=> array('settings'),
+					'modes'				=> array('shmoogle', 'event_calendars'),
 				),
 			)),
 		);

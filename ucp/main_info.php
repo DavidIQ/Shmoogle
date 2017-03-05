@@ -19,12 +19,24 @@ class main_info
 	{
 		return array(
 			'filename'	=> '\davidiq\Shmoogle\ucp\main_module',
-			'title'		=> 'UCP_SHMOOGLE_TITLE',
 			'modes'		=> array(
 				'settings'	=> array(
 					'title'	=> 'UCP_SHMOOGLE_SETTINGS',
 					'auth'	=> 'ext_davidiq/Shmoogle',
 					'cat'	=> array('UCP_SHMOOGLE_TITLE')
+				),
+			),
+			'title'		=> 'UCP_SHMOOGLE',
+			'modes'		=> array(
+				'shmoogle'		=> array(
+					'title' => 'UCP_PROFILE_SHMOOGLE',
+					'auth' => '',
+					'cat' => array('UCP_SHMOOGLE_TITLE')
+				),
+				'user_events'	=> array(
+					'title' => 'UCP_PROFILE_ADD_EVENT',
+					'auth' => '',
+					'cat' => array('UCP_SHMOOGLE_TITLE')
 				),
 			),
 		);
